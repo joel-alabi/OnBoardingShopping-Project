@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View ,Image} from 'react-native';
+import AddToCart from './AddToCart';
+import OnlineShopping from './OnlineShopping ';
+import PaymentSuccessful from './PaymentSuccessful';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    
+    <OnlineShopping/>
+      {/* <PaymentSuccessful/> */}
+      {/* <AddToCart/> */}
     </View>
   );
 }
@@ -14,8 +19,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginVertical:30,
+    marginHorizontal:20,
   },
 });
