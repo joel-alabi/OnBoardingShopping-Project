@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Image,TouchableOpacity,} from 'react-native';
 
-export default function OnlineShopping () {
+export default function OnlineShopping ({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.pageTitleInfoContainer}>
@@ -19,11 +19,17 @@ export default function OnlineShopping () {
         />
       </View>       
                      
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={()=>{
+        navigation.navigate("AddToCart")
+      }}
+      style={styles.button}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
       <View style={styles.footer}>
-        <Text style={styles.footerSkip}> Skip</Text>
+        <Text onPress={()=>{
+        navigation.navigate("AddToCart")
+      }}
+        style={styles.footerSkip}> Skip</Text>
 <View></View>
       </View>
         </View>
@@ -33,7 +39,7 @@ const styles= StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
-        marginVertical:35,
+        marginHorizontal:10,
     },
     pageTitleInfoContainer:{
         flexDirection:'column',
@@ -79,7 +85,7 @@ image: {
   },
   footer: {
     flexDirection: "row-reverse",
-     marginTop: 50,
+     marginTop: 40,
   },
 
   footerSkip: {

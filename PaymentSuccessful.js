@@ -40,7 +40,7 @@ const styles= StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
-        marginVertical:35,
+        marginHorizontal:10,
     },
     pageTitleInfoContainer:{
         flexDirection:'column',
@@ -86,7 +86,7 @@ image: {
   },
   footer: {
     flexDirection: "row",
-     marginTop: 50,
+     marginTop: 40,
     justifyContent: "space-between",
   },
 

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View,Image,TouchableOpacity,} from 'react-native';
 
 
 
-export default function AddToCart() {
+export default function AddToCart({navigation}) {
     return (
         <View style={styles.container}>
             <View style={styles.pageTitleInfoContainer}>
@@ -21,18 +21,25 @@ export default function AddToCart() {
         />
       </View>       
                      
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={()=>{
+        navigation.navigate("PaymentSuccessful")
+      }}
+       style={styles.button}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
       <View style={styles.footer}>
         <Text
-          
+         onPress={()=>{
+        navigation.navigate("OnlineShopping")
+      }}
           style={styles.footerSkip}
         >
           Previous
         </Text>
 
-        <Text
+        <Text onPress={()=>{
+        navigation.navigate("PaymentSuccessful")
+      }}
           
           style={styles.footerPrevious}
         >
@@ -46,7 +53,7 @@ const styles= StyleSheet.create({
     container:{
         flex:1,
         flexDirection:'column',
-        marginVertical:35,
+        marginHorizontal:10,
     },
     pageTitleInfoContainer:{
         flexDirection:'column',
@@ -92,7 +99,7 @@ image: {
   },
   footer: {
     flexDirection: "row",
-     marginTop: 50,
+     marginTop: 40,
     justifyContent: "space-between",
   },
 
